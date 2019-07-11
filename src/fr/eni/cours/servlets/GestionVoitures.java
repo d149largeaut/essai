@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.cours.bo.Voiture;
+
 /**
  * Servlet implementation class GestionVoitures
  */
@@ -19,7 +21,12 @@ public class GestionVoitures extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		Voiture v = new Voiture();
+		v.setMarque("Audi");
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath())
+		.append("voiture : ").append(v.getMarque());
+		
 	}
 
 	/**
