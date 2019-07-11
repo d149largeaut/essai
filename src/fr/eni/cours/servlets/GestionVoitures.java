@@ -21,9 +21,11 @@ public class GestionVoitures extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Voiture v1= new Voiture();
-		v1.setMarque("mercedes");
-		response.getWriter().append("Served at: ").append(request.getContextPath()).append(v1.toString());
+		Voiture v= new Voiture();
+		v.setMarque("mercedes");
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath())
+		.append("voiture : ").append(v.getMarque());
 		
 	}
 
