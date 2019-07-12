@@ -5,7 +5,6 @@ import java.io.Serializable;
 /**
  * JavaBean Voiture
  * @author tl
- * @modification ajout d'un modele (membres)
  *
  */
 public class Voiture implements Serializable{
@@ -15,17 +14,23 @@ public class Voiture implements Serializable{
 	//attributs
 	private String marque;
 	private String modele; 
+	private int kilometrage;
 
 	//constructeurs
 	public Voiture() {
 	}
 
+	public Voiture(String marque, int kilometrage) {
+		setMarque(marque);
+		setKilometrage(kilometrage);
+	}
+
 	//autres methodes
 	@Override
 	public String toString() {
-		return "Voiture [marque=" + marque + "]";
+		return "Voiture [marque=" + getMarque() + ", kilometrage=" + getKilometrage() + "]";
 	}
-	
+
 	//accesseurs et mutateurs
 	public String getMarque() {
 		return marque;
@@ -39,8 +44,16 @@ public class Voiture implements Serializable{
 		return modele;
 	}
 
+	public int getKilometrage() {
+		return kilometrage;
+	}
+
 	public void setModele(String modele) {
 		this.modele = modele;
+	}
+
+	public void setKilometrage(int kilometrage) {
+		this.kilometrage = kilometrage;
 	}
 
 	
