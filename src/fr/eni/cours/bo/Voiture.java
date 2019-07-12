@@ -1,11 +1,37 @@
 package fr.eni.cours.bo;
 
-public class Voiture {
-	private String marque;
+import java.io.Serializable;
 
+/**
+ * JavaBean Voiture
+ * @author tlargeau
+ * @modification ajout du kilometrage
+ *
+ */
+public class Voiture implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+
+	//attributs
+	private String marque;
+	private int kilometrage;
+
+	//constructeurs
 	public Voiture() {
 	}
 
+	public Voiture(String marque, int kilometrage) {
+		setMarque(marque);
+		setKilometrage(kilometrage);
+	}
+
+	//autres methodes
+	@Override
+	public String toString() {
+		return "Voiture [marque=" + getMarque() + ", kilometrage=" + getKilometrage() + "]";
+	}
+
+	//accesseurs et mutateurs
 	public String getMarque() {
 		return marque;
 	}
@@ -14,10 +40,13 @@ public class Voiture {
 		this.marque = marque;
 	}
 
-	@Override
-	public String toString() {
-		return "Voiture [marque=" + marque + "]";
+	public int getKilometrage() {
+		return kilometrage;
 	}
-	
+
+	public void setKilometrage(int kilometrage) {
+		this.kilometrage = kilometrage;
+	}
+
 	
 }
