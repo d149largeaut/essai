@@ -22,7 +22,7 @@ public class GestionVoitures extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Voiture v = new Voiture();
-		v.setMarque("Audi");
+		v.setMarque("Audi8");
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath())
 		.append("voiture : ").append(v.getMarque());
